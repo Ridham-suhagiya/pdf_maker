@@ -1,18 +1,22 @@
-from re import L
-from flask import Flask,request,render_template
+from pdf_maker.lambdaMaker import lambda_maker
+from urllib import request
+from flask import Flask,render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    return "<h1>hello world</h1>"
+def hello():
+    return {'message':'hello world'}
 
 @app.route('/home')
 def first():
-
+    lambda_maker()
     if request.form.get('submit') == 'submit':
         f = request.file('img')
         f.save('','screenshot.png')
-        return render_template('templates/success.html')
+        return render_template('success.html')
 
-    return render_template('templates/image_input.html')
+    return render_template('image_input.html')
+
+if __name__ == '__main__':
+    app.run()
