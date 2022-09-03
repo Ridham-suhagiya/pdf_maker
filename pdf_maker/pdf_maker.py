@@ -103,7 +103,9 @@ class Pdf_maker:
         else:
             shutil.rmtree(path)
             os.makedirs(path)
-        # if testing :
+        if testing :
             pdf.output(f"{path}/test.pdf","F")
-        # else:
-            # pdf.output(f'{path}/{name}','F')
+            return 'test.pdf'
+        else:
+            pdf.output(f'{path}/{name}','F')
+            return name

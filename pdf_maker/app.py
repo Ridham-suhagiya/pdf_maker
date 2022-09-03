@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from lambdaMaker import lambda_maker
 from urllib import request
 from flask import Flask,render_template, request,url_for
@@ -29,9 +30,9 @@ def first():
             name = image.filename
             
             image.save(os.path.join('images', f'{name}'))
-        response = lambda_maker()
+        response,name = lambda_maker()
         if response == True:
-            return render_template('pdf_done.html')
+            return render_template('pdf_done.html',value = name)
         else:
             print(response)
             return '<h1> Something went wrong </h1>'
