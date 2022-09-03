@@ -1,4 +1,4 @@
-from app import app
+from pdf_maker.app import app
 
 if __name__ == '__main__':
 	app.run()

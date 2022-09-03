@@ -26,7 +26,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 
-
 creds.txt
 
 MANIFEST
@@ -111,6 +110,7 @@ celerybeat.pid
 env/
 venv/
 ENV/
+Env/
 env.bak/
 venv.bak/
 
