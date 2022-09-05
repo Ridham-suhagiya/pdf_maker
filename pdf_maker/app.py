@@ -22,7 +22,7 @@ def hello():
 @app.route('/home', methods=['GET', 'POST'])
 def first():
     
-
+    
     if request.method == 'POST':
         images = request.files.getlist('img')
         checker('images')

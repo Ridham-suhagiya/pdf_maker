@@ -8,3 +8,7 @@ def checker(path):
     else:
         shutil.rmtree(path)
         os.makedirs(path)
+
+
+def number(a):
+    return int(a.split('-')[-1].split('.')[0])
